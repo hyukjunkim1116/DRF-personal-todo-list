@@ -1,0 +1,3 @@
+
+create user:
+{"email":"drf123@pos.com","name":"kim3","gender":"female","age":"3","introduction":"hiroooooooo","password":"1"}

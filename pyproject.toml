@@ -9,7 +9,11 @@ packages = [{include = "drf_personal_todo_list"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-django = "^4.2"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+django = "^4.0.0"
+django-cors-headers = "^3.14.0"
+django-environ = "^0.10.0"
 
 
 [build-system]
