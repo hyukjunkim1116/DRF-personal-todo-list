@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "drf-personal-todo-list"
+version = "0.1.0"
+description = ""
+authors = ["Hyuk Jun Kim <nmkk1234@naver.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "drf_personal_todo_list"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
