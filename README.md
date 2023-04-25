@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm hyukjunkim</h1>
 <h3 align="center">Personal Todolist-backend project using DRF</h3>
-- 🔭 I’m currently working on **Todo-list**
+- 🔭 In todo-list:
 
 - 👯 Implemented features:        
 - **user: signup,login,logout,get,update,delete**
