@@ -2,7 +2,8 @@
 <h3 align="center">Personal Todolist-backend project using DRF</h3>
 - 🔭 I’m currently working on **Todo-list**
 
-- 👯 Implemented features **user: signup,login,logout,get,update,delete//todo: create,get,update,delete**
+- 👯 Implemented features **user: signup,login,logout,get,update,delete
+-                         **todo: create,get,update,delete**
 
 - 🤝 Used skills **simplejwt**
 <h3 align="left">Languages and Tools:</h3>
