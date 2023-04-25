@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm hyukjunkim</h1>
 <h3 align="center">Personal Todolist-backend project using DRF</h3>
 - 🔭 I’m currently working on [1](1)
-
+- 🔭 features in this project [1123](1123)
 - 🌱 I’m currently learning **4**
 
 - 👯 I’m looking to collaborate on [2](2)
