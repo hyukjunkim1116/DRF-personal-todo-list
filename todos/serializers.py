@@ -21,3 +21,9 @@ class TodoDetailSerializer(ModelSerializer):
     class Meta:
         model = TodoList
         fields = "__all__"
+
+
+class TodoDetailListSerializer(ModelSerializer):
+    class Meta:
+        model = TodoList
+        exclude = ("user",)

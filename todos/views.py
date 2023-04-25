@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import NotFound, ParseError
 from .models import TodoList
-from .serializers import TodoSerializer, TodoDetailSerializer
+from .serializers import TodoSerializer, TodoDetailSerializer, TodoDetailListSerializer
 
 
 class TodoLists(APIView):
@@ -54,7 +54,7 @@ class TodoListDetail(APIView):
 
     def get(self, request, pk):
         todolist = self.get_object(pk, request.user)
-        serializer = TodoDetailSerializer(todolist)
+        serializer = TodoDetailListSerializer(todolist)
         return Response(serializer.data)
 
     def delete(self, request, pk):
@@ -64,7 +64,7 @@ class TodoListDetail(APIView):
 
     def put(self, request, pk):
         todolist = self.get_object(pk, request.user)
-        serializer = TodoDetailSerializer(
+        serializer = TodoDetailListSerializer(
             todolist,
             data=request.data,
             partial=True,
@@ -77,7 +77,7 @@ class TodoListDetail(APIView):
             is_complete = request.data.get("is_complete")
             if updated_at or completion_at:
                 raise ParseError("업데이트 시간과 완료 시간은 설정할 수 없습니다!")
-            if is_complete == False:
+            if is_complete == False or is_complete == None:
                 completion_at = None
             else:
                 completion_at = str(timezone.localtime(timezone.now()).date())
@@ -85,7 +85,7 @@ class TodoListDetail(APIView):
             todolist = serializer.save(
                 updated_at=updated_at, completion_at=completion_at
             )
-            serializer = TodoDetailSerializer(todolist)
+            serializer = TodoDetailListSerializer(todolist)
             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
         else:
             return Response(

@@ -42,6 +42,9 @@ class Me(APIView):
             partial=True,
         )
         if serializer.is_valid():
+            email = request.data.get("email")
+            if email:
+                raise ParseError("이메일은 변경할 수 없습니다!")
             user = serializer.save()
             serializer = serializers.UserSerializer(user)
             return Response(serializer.data)
@@ -64,10 +67,11 @@ class ChangePassword(APIView):
         user = request.user
         old_password = request.data.get("old_password")
         new_password = request.data.get("new_password")
+
         if not old_password or not new_password:
-            raise ParseError
+            raise ParseError("비밀번호를 적어주세요!")
         if old_password == new_password:
-            raise ParseError
+            raise ParseError("원래와 다른 비밀번호를 적어주세요!")
         if user.check_password(old_password):
             user.set_password(new_password)
             user.save()
